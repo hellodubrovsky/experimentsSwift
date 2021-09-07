@@ -146,3 +146,26 @@ someArray7.sort()
 // “Метод randomElement() позволяет получить случайный элемент массива”
 let randomArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 randomArray.randomElement()
+
+// Метод map
+let arrayMap = [1, 2, 3, 4, 5, 6]
+print(arrayMap.map{ $0 * $0 })
+
+// Метод forEach, который перебирает все элементы
+let arrayForEach = [1, 2, 3, 4, 5]
+arrayForEach.forEach{ print($0) }
+
+// Метод enumerated, с помощью него можно получить индекс и значение элемента
+let arrayEnumerated = [7, 8, 9]
+
+for (index, item) in arrayEnumerated.enumerated() {
+    print("Index: \(index), item: \(item)")
+}
+
+// Метод prefix, перебор элементов пока условие возвращает true. (возвращает отфильтрованный массив)
+let arrayPrefix = [1, 2, 3, 4, 5, 6]
+print(arrayPrefix.prefix(while: { $0 < 4 }))
+ 
+// Противоположным образом работает метод drop() - он, наоборт, удаляет все элементы до того, пока они не станут соответствовать условию
+
+print(arrayPrefix.drop(while: { $0 < 4 }))
